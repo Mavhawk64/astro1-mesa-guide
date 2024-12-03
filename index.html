@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESA Installation Guide</title>
+    <style>
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg-color: #fff;
+            --link-color: #007BFF;
+            --code-bg-color: #f1f1f1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #121212;
+                --text-color: #e0e0e0;
+                --container-bg-color: #1e1e1e;
+                --link-color: #4EA8FF;
+                --code-bg-color: #333;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--container-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--link-color);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: var(--code-bg-color);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>MESA Installation Guide</h1>
+        <p>Follow these steps to install MESA easily:</p>
+        <ol>
+            <li>
+                Download <strong>Git Bash</strong>:
+                <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>
+            </li>
+            <li>
+                Download X Server:
+                <ul>
+                    <li>For Windows: <a href="https://sourceforge.net/projects/xming/files/latest/download"
+                            target="_blank">Download Xming</a></li>
+                    <li>For macOS: <a href="https://www.xquartz.org/" target="_blank">Download XQuartz</a></li>
+                </ul>
+            </li>
+            <li>
+                Download <strong>Docker Desktop</strong>:
+                <a href="https://www.docker.com/products/docker-desktop/"
+                    target="_blank">https://www.docker.com/products/docker-desktop/</a>
+            </li>
+            <li>
+                Follow the remaining steps from the MESA-Docker GitHub repository:
+                <a href="https://github.com/evbauer/MESA-Docker"
+                    target="_blank">https://github.com/evbauer/MESA-Docker</a>
+            </li>
+        </ol>
+
+        <h2>Additional Notes</h2>
+        <ul>
+            <li>
+                Comment out the last line of the <code>./xxx_dockerMESA.sh</code> file(s) to keep the Docker container
+                running:
+                <br><code># docker kill mesa_dock</code>
+            </li>
+            <li>
+                Instead of running the non-versioned command, run this versioned command:
+                <br><code>./win_dockerMESA.sh -v 15140</code> (Windows)
+                <br><code>./mac_dockerMESA.sh -v 15140</code> (macOS)
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
